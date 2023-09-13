@@ -201,7 +201,7 @@ Segue: relationships can be represented as trees.
 
 :::
 
-# Of genotype matrices and genealogical trees
+# Genotype matrices and genealogical trees
 
 ![](assets/images/ralph-2020-fig1.jpeg)
 
@@ -1044,7 +1044,7 @@ tskit assumes
 1. known ancestral state
 2. phased genomes
 
-and requires fairly large sample sizes leverage power of data
+and requires fairly large sample sizes to leverage  power of data
 compression ($n>1000$) and speedup of statistical analyses ($n$ in the
 hundreds)
 
@@ -1099,31 +1099,27 @@ and ARGweaver tutorial [@hubisz_InferenceAncestralRecombination_2020]
 
 :::: {.columns}
 
-::: {.column width="30%"}
+::: {.column width="55%"}
 
-:::
+::::: {#fig-motacilla layout-ncol=5}
 
-::: {.column width="40%"}
+![](assets/images/Yarrellii.jpg)
 
-::::: {#fig-motacilla layout-ncol=4}
+![](assets/images/Personata.jpg)
 
-![](assets/images/Yarrellii.jpg){height=70px}
+![](assets/images/Baicalensis.jpg)
 
-![](assets/images/Personata.jpg){height=70px}
+![](assets/images/Alba.jpg)
 
-![](assets/images/Baicalensis.jpg){height=70px}
+![](assets/images/Alboides2.jpg)
 
-![](assets/images/Alba.jpg){height=70px}
+![](assets/images/Leucopsis.jpg)
 
-![](assets/images/Alboides2.jpg){height=70px}
+![](assets/images/Lugens.jpg)
 
-![](assets/images/Leucopsis.jpg){height=70px}
+![](assets/images/Ocularis.jpg)
 
-![](assets/images/Lugens.jpg){height=70px}
-
-![](assets/images/Ocularis.jpg){height=70px}
-
-![](assets/images/Subpersonata.jpg){height=70px}
+![](assets/images/Subpersonata.jpg)
 
 *Motacilla alba* subspecies; from top left *M. yarrellii*, *M. personata*,
 *M. baicalensis*, *M. alba*, *M. alboides*, *M. leucopsis*, *M. lugens*, *M.
@@ -1132,20 +1128,44 @@ ocularis*, and *M. subpersonata*. Paintings by Bill Zetterström (from
 
 :::::
 
+::: {.flushright}
+
+Together with Erik Enbody, Tom van der Valk, Leif Andersson, and Per
+Alström.
+
 :::
 
-::: {.column width="30%"}
+:::
+
+:::
+
+:::{.column width="8%"}
+
+:::
+
+::: {.column width="35%"}
+
+::: {.fragment}
+
+:::{.translatey100}
+
+![](assets/images/snakemake.png){height=50px}
+
+![Snakemake rulegraph](assets/images/rulegraph.png){height=400px}
+
+::: {.flushright}
+
+Source code at <https://github.com/percyfal/tswf>
+
+:::
+
+:::
+
+:::
 
 :::
 
 ::::
-
-::: {.flushright}
-
-Together with Erik Enbody, Tom van der Valk, Leif Andersson, and Per
-Alström. Source code at <https://github.com/percyfal/tswf>
-
-:::
 
 # Genealogical nearest neighbour chromosome plots
 
@@ -1178,6 +1198,22 @@ Alström. Source code at <https://github.com/percyfal/tswf>
 GNN proportions for chromosome 20 for selected individuals.
 
 :::::
+
+# Acknowledgements
+
+- Tom van der Valk
+- Gabriel David
+
+## tskit development team
+
+- Yan Wong
+- Peter Ralph
+
+## Wagtail group
+
+- Erik Enbody
+- Leif Andersson
+- Per Alström
 
 # Bibliography {.unnumbered .unlisted}
 
