@@ -1,0 +1,6 @@
+project:
+  output-dir: .
+  render:
+    - index.qmd
+  pre-render:
+    - ./setup-data.sh
