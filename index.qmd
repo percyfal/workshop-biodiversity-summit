@@ -1215,6 +1215,28 @@ GNN proportions for chromosome 20 for selected individuals.
 - Leif Andersson
 - Per Alström
 
+# {}
+
+:::: {.columns}
+
+::: {.column width="85%"}
+
+![](assets/images/pgipweb.png){width=100%}
+
+:::
+
+::: {.column width="15%"}
+
+::: {.flushright}
+
+![](assets/images/pgipqr.svg){width=100%}
+
+:::
+
+:::
+
+::::
+
 # Bibliography {.unnumbered .unlisted}
 
 ::: { #refs }
