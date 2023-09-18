@@ -26,6 +26,7 @@ jobs:
           cp README.md content
           jupyter lite build --contents content --output-dir dist
           cp index.html dist/talk.html
+          cp talk.pdf dist/talk.pdf
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:

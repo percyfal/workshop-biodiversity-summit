@@ -32,6 +32,7 @@ format:
     margin: 0.1
     navigation-mode: vertical
     reference-location: margin
+    pdf-separate-fragments: true
     template-partials:
       - assets/www/title-slide.html
     title-slide-attributes:
@@ -1166,6 +1167,14 @@ Source code at <https://github.com/percyfal/tswf>
 :::
 
 ::::
+
+# {visibility="hidden"}
+
+:::{.center}
+
+![](assets/images/gnnchromosomes.png){.width=100%}
+
+:::
 
 # Genealogical nearest neighbour chromosome plots
 
