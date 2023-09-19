@@ -5,7 +5,7 @@ author:
   - "Per Unneberg"
   - "Based on slides by Yan Wong
   <br><https://github.com/hyanwong/genealogy_workshop>"
-date: last-modified
+date: 09/20/2023
 date-format: "DD-MMM-YYYY"
 institute: NBIS
 from: markdown+emoji
