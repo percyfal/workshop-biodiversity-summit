@@ -46,3 +46,4 @@ jupyterlab-filesystem-access
 networkx
 pyyaml
 drawsvg
+tqdm
