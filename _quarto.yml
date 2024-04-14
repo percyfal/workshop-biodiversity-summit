@@ -4,3 +4,54 @@ project:
     - index.qmd
   pre-render:
     - ./setup-data.sh
+
+institute: NBIS
+from: markdown+emoji
+csl: https://raw.githubusercontent.com/citation-style-language/styles/master/apa.csl
+bibliography: resources/bibliography.bib
+
+format:
+  revealjs:
+    theme:
+      - assets/css/nbis.scss
+    embed-resources: false
+    toc: false
+    slide-number: true
+    preview-links: true
+    chalkboard: false
+    footer: "Tree sequence inference"
+    smaller: false
+    highlight-style: gruvbox
+    fig-height: 12
+    fig-width: 10
+    width: 1280
+    height: 720
+    margin: 0.1
+    navigation-mode: vertical
+    reference-location: margin
+    pdf-separate-fragments: true
+    template-partials:
+      - assets/www/title-slide.html
+    title-slide-attributes:
+      data-background-image: assets/logos/nbis-scilifelab.svg
+      data-background-size: 500px
+      data-background-position: top left
+
+execute:
+  echo: true
+  warning: false
+  cache: true
+  include: true
+  autodep: true
+  eval: true
+  error: true
+
+knitr:
+  opts_chunk:
+    code-fold: false
+    tidy: true
+    comment-char: "#>"
+    fig-format: svg
+    engine.opts:
+      dvisvgm.opts: --font-format=woff
+      template: assets/www/tikzfig.tex

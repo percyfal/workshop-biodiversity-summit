@@ -7,60 +7,13 @@ author:
   <br><https://github.com/hyanwong/genealogy_workshop>"
 date: 09/20/2023
 date-format: "DD-MMM-YYYY"
-institute: NBIS
-from: markdown+emoji
-csl: https://raw.githubusercontent.com/citation-style-language/styles/master/apa.csl
-bibliography: resources/bibliography.bib
 format:
   revealjs:
-    theme:
-      - assets/css/nbis.scss
-    embed-resources: true
-    toc: false
     toc-depth: 1
-    slide-level: 1
-    slide-number: true
-    preview-links: true
-    chalkboard: false
-    footer: "Tree sequence inference"
-    smaller: false
-    highlight-style: gruvbox
-    fig-height: 12
-    fig-width: 10
-    width: 1280
-    height: 720
-    margin: 0.1
-    navigation-mode: vertical
-    reference-location: margin
-    pdf-separate-fragments: true
-    template-partials:
-      - assets/www/title-slide.html
-    title-slide-attributes:
-      data-background-image: assets/logos/nbis-scilifelab.svg
-      data-background-size: 500px
-      data-background-position: top left
-
-execute:
-  echo: true
-  warning: false
-  cache: true
-  include: true
-  autodep: true
-  eval: true
-  error: true
-
-knitr:
-  opts_chunk:
-    code-fold: false
-    tidy: true
-    comment-char: "#>"
-    fig-format: svg
-    engine.opts:
-      dvisvgm.opts: --font-format=woff
-      template: assets/www/tikzfig.tex
+    slide-level: 2
 ---
 
-# Setup  {visibility="hidden" .unnumbered .unlisted}
+## Setup  {visibility="hidden" .unnumbered .unlisted}
 
 ```{r libs}
 #| echo: false
@@ -80,7 +33,7 @@ knitr::knit_hooks$set(inline = function(x) {
 vars <- read_yaml("_variables.yml")
 ```
 
-# Genomics data is large
+## Genomics data is large
 
 :::: {.columns}
 
@@ -138,7 +91,7 @@ cf Yan's slide from 2011
 
 :::
 
-# Population genomics
+## Population genomics
 
 From sample collection and preparation through assembly, sequencing,
 variant calling and other data processing steps to **genotype
@@ -150,7 +103,7 @@ matrices**
 
 :::
 
-# Making sense of variation data
+## Making sense of variation data
 
 :::: {.columns}
 
@@ -202,7 +155,7 @@ Segue: relationships can be represented as trees.
 
 :::
 
-# Genotype matrices and genealogical trees
+## Genotype matrices and genealogical trees
 
 ![](assets/images/ralph-2020-fig1.jpeg)
 
@@ -239,7 +192,7 @@ history, ...)
 
 :::
 
-# Trees capture biology
+## Trees capture biology
 
 :::: {style="display: grid; grid-template-columns: 300px 300px 300px
 300px; grid-row-gap: 0px; grid-column-gap: 10px;"}
@@ -325,7 +278,7 @@ they change with recombination
 
 :::
 
-# Recombination modifies gene genealogies
+## Recombination modifies gene genealogies
 
 :::: {.columns}
 
@@ -372,7 +325,7 @@ print(treeviz.recombination_trees())
 
 :::
 
-# Ancestral recombination graphs (ARGs)
+## Ancestral recombination graphs (ARGs)
 
 :::{}
 
@@ -386,7 +339,7 @@ print(treeviz.recombination_trees())
 
 :::
 
-# A "genetic genealogy" tracks genome-wide inheritance paths
+## A "genetic genealogy" tracks genome-wide inheritance paths
 
 <!-- markdownlint-disable MD033 -->
 
@@ -427,7 +380,7 @@ ARG. Is there any such structure?
 
 :::
 
-# msprime enables simulation of large chromosomes with recombination
+## msprime enables simulation of large chromosomes with recombination
 
 :::: {.columns}
 
@@ -494,11 +447,11 @@ print(treeviz.make_3d_tree(tree_width=100, lmargin=10, rmargin=10))
 
 :::
 
-# msprime stores data as succinct tree sequences
+## msprime stores data as succinct tree sequences
 
 ![Tree sequences [@baumdicker_EfficientAncestryMutation_2022, Fig. 2]](assets/images/baumdicker-2022-fig2.jpg){width=700}
 
-# Tree sequences compress data and speedup analyses
+## Tree sequences compress data and speedup analyses
 
 :::: {style="display: grid; grid-template-columns: 400px 140px 600px;
 220:grid-row-gap: 0px; grid-column-gap: 10px;"}
@@ -519,7 +472,7 @@ Data compression
 
 :::{}
 
-![](https://tskit.dev/tutorials/_images/225cf0b1bd47d6f577d9abcd45fc738beab745251c104a6e63439f9d7c40eb4b.svg){width=80%}
+![](assets/images/tskit-compression.svg){width=80%}
 
 :::
 
@@ -545,7 +498,7 @@ Speed
 
 :::{}
 
-![](https://tskit.dev/tutorials/_images/92d2a0aed6370968593fded5856061bd46ef83a8308e5b360290f10067e44e7b.svg){width=80%}
+![](assets/images/tskit-speed.svg){width=80%}
 
 :::
 
@@ -567,7 +520,7 @@ Source: [What is a tree sequence? (https://tskit.dev/tutorials/what_is.html)](ht
 
 ::::
 
-# Getting hold of tree sequences
+## Getting hold of tree sequences
 
 ```{r, fig.ext="svg", engine="tikz" }
 #| label: getting-tree-sequences
@@ -610,7 +563,7 @@ Other programs that don't output tree sequence format by default: *ARGweaver*, *
 
 :::
 
-# Analysing tree sequences
+## Analysing tree sequences
 
 :::{.center}
 
@@ -624,7 +577,7 @@ Other programs that don't output tree sequence format by default: *ARGweaver*, *
 
 :::
 
-# tskit terminology: the basics
+## tskit terminology: the basics
 
 ```{python }
 #| label: basic-tree-file
@@ -661,7 +614,7 @@ Images from online tutorial "Terminology & concepts" <https://tskit.dev/tutorial
 
 :::
 
-# tskit terminology: nodes and edges {.smaller}
+## tskit terminology: nodes and edges {.smaller}
 
 :::: {.columns}
 
@@ -765,7 +718,7 @@ print(ts.draw_svg(y_axis=True, y_gridlines=True, time_scale="log_time",
 
 ::::
 
-# tskit terminology: sites and mutations
+## tskit terminology: sites and mutations
 
 :::: {.columns}
 
@@ -807,7 +760,7 @@ not vary between genomes: usually we don’t bother tracking these.
 
 ::::
 
-# tskit terminology: sites and mutations
+## tskit terminology: sites and mutations
 
 :::: {.columns}
 
@@ -872,7 +825,7 @@ not vary between genomes: usually we don’t bother tracking these.
 
 ::::
 
-# tskit terminology: sites and mutations
+## tskit terminology: sites and mutations
 
 :::: {.columns}
 
@@ -963,7 +916,7 @@ Normally, a site is created in order to place one or [more]{.cbporange
 
 ::::
 
-# Using tskit
+## Using tskit
 
 <!-- markdownlint-disable MD013 -->
 
@@ -1038,7 +991,7 @@ Docs and tutorials
 
 <!-- markdownlint-enable MD013 -->
 
-# tskit and biodiversity
+## tskit and biodiversity
 
 tskit assumes
 
@@ -1055,7 +1008,7 @@ hundreds)
 
 :::
 
-# Reasons to use tskit ecosystem for evolution and biodiversity {.smaller}
+## Reasons to use tskit ecosystem for evolution and biodiversity
 
 ::: {.incremental}
 
@@ -1096,7 +1049,7 @@ and ARGweaver tutorial [@hubisz_InferenceAncestralRecombination_2020]
 
 :::
 
-# Application: Evolutionary genomics of the *Motacilla alba* (white wagtails) radiation
+## Application: Evolutionary genomics of the *Motacilla alba* (white wagtails) radiation
 
 :::: {.columns}
 
@@ -1168,7 +1121,7 @@ Source code at <https://github.com/percyfal/tswf>
 
 ::::
 
-# {visibility="hidden"}
+## {visibility="hidden"}
 
 :::{.center}
 
@@ -1176,7 +1129,7 @@ Source code at <https://github.com/percyfal/tswf>
 
 :::
 
-# Genealogical nearest neighbour chromosome plots
+## Genealogical nearest neighbour chromosome plots
 
 :::{.center}
 
@@ -1188,43 +1141,43 @@ Source code at <https://github.com/percyfal/tswf>
 
 :::
 
-# Genealogical nearest neighbour haplotype plots
+## Genealogical nearest neighbour haplotype plots
 
 ::::: {#fig-gnn-haplotype layout-ncol=2}
 
-![]({{< var hap_1_0 >}}){width=50%}
+![]({{< var hap_1_0 >}}){width=100%}
 
-![]({{< var hap_1_1 >}}){width=50%}
+![]({{< var hap_1_1 >}}){width=100%}
 
-![]({{< var hap_2_0 >}}){width=50%}
+![]({{< var hap_2_0 >}}){width=100%}
 
-![]({{< var hap_2_1 >}}){width=50%}
+![]({{< var hap_2_1 >}}){width=100%}
 
-![]({{< var hap_3_0 >}}){width=50%}
+![]({{< var hap_3_0 >}}){width=100%}
 
-![]({{< var hap_3_1 >}}){width=50%}
+![]({{< var hap_3_1 >}}){width=100%}
 
 GNN proportions for chromosome 20 for selected individuals.
 
 :::::
 
-# Acknowledgements
+## Acknowledgements
 
 - Tom van der Valk
 - Gabriel David
 
-## tskit development team
+### tskit development team
 
 - Yan Wong
 - Peter Ralph
 
-## Wagtail group
+### Wagtail group
 
 - Erik Enbody
 - Leif Andersson
 - Per Alström
 
-# {}
+## {}
 
 :::: {.columns}
 
@@ -1246,7 +1199,7 @@ GNN proportions for chromosome 20 for selected individuals.
 
 ::::
 
-# Bibliography {.unnumbered .unlisted}
+## Bibliography {.unnumbered .unlisted}
 
 ::: { #refs }
 :::
